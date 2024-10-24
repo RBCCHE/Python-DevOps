@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: survey-app-deploy 
+  labels:
+    app: python-code
+spec:
+  selector:
+    matchLabels:
+      app: python-code
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: python-code
+    spec:
+      containers:
+      - name: python-code
+        image: brcee/python-code
+        ports:
+        - containerPort: 8000

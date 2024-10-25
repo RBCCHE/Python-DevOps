@@ -25,10 +25,13 @@
   - name: push docker image  
     command: docker push brcee/python-code
 
-### Make sure to change the image name in the previous tasks with your dockerhub username and repository name
+  - name: run new container
+    command: docker run -d --name django-container -p 4000:8000 brcee/python-code
 
-  # - name: run new container
-  #   command: docker run -d --name django-container -p 4000:8000 brcee/python-code
+  - name: create a deployment in kubernetes
+    shell: cd Python-DevOps/k8s; kubectl apply -f deployment.yaml
 
-#   # - name: run migration inside container
-#   #   command: docker exec -i django-container sh -c "python3 manage.py makemigrations && python3 manage.py migrate"
+  - name: create a service in kubernetes
+    command: kubectl apply -f services.yaml
+
+

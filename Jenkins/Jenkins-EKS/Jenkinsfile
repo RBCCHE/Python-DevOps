@@ -30,7 +30,7 @@ pipeline {
               secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
               ]]) {
               sh """
-              aws eks update-kubeconfig --name python-cluster
+              aws eks update-kubeconfig --name python-cluster --region eu-central-1
               """
             }
         }

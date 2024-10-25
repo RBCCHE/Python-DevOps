@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Run Ansible Playbook') {
             steps {
-                sh """
-                cd Python-DevOps/Python
+                bat """
+                cd Python-DevOps\\Python
                 ansible-playbook playbook.yml
                 """
             }

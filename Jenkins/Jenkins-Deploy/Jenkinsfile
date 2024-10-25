@@ -51,7 +51,7 @@ pipeline {
                 accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
-                sh "aws elb describe-load-balancers | grep DNSName"
+                sh "aws elb describe-load-balancers --region us-east-1 | grep DNSName"
               }
           }
       }

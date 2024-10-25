@@ -1,19 +1,14 @@
 pipeline {
     agent any
 
-    }
-
     stages {
-
-      stage('run ansible playbook') {
-          steps {
+        stage('Run Ansible Playbook') {
+            steps {
                 sh """
                 cd Python-DevOps/Python
                 ansible-playbook playbook.yml
                 """
-              
-          }
-      }
-
-      
+            }
+        }
+    }
 }

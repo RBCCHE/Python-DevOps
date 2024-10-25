@@ -17,7 +17,7 @@ pipeline {
                 cd ..
                 cd ..
                 cd Python
-                ansible-playbook ansible-playbook.yml
+                ansible-playbook playbook.yml
                 """
             }
         }

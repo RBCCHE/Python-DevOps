@@ -14,9 +14,7 @@ pipeline {
         stage('Build & push Dockerfile') {
             steps {
                 sh """
-                cd ..
-                cd ..
-                cd Python
+                cd var\lib\jenkins\workspace\Docker\Python
                 ansible-playbook playbook.yml
                 """
             }

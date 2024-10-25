@@ -2,7 +2,7 @@
 echo "--------------------Installing Java--------------------"
 sudo apt-get update -y
 sudo apt upgrade -y 
-sudo apt-get install openjdk-8-jdk -y
+sudo apt install openjdk-21-jdk -y
 #Install Python
 echo "--------------------Installing Python--------------------"
 sudo apt-get update -y
@@ -66,11 +66,6 @@ sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/
 sudo curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
 echo "$(<kubectl.sha256)  kubectl" | sha256sum --check
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-#Install Minikube
-echo "--------------------Installing Minikube--------------------"
-sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
-minikube start
 #Install K9s
 echo "--------------------Installing K9s--------------------"
 wget https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz
